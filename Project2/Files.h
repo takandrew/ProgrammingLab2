@@ -6,11 +6,11 @@
 #include<Windows.h>
 using namespace std;
 
-bool FileExist(string path); // Проверка существования файла
-void FileWriteData(int n, double *matrix);  // Запись исходных данных в файл
-int FileReadMatrixSize(string path); // Чтение длины строки матрицы из файла
-double* FileReadMatrix(int n, double *matrix, string path); // Чтение значений элементов матрицы из файла
-bool ReadOnlyChecking(string path); //Функция, проверяющая, является ли файл доступным только для чтения. Принимает путь к файлу.
-bool FileCorrectChecking(string path); //Функция, проверяющая корректность файла
-bool FileReadCorrectChecking(string path); //Функция, проверяющая корректность файла, из которого считывают данные
-bool FileOpenChecking(string path); // Функция, проверяющая открытие файла
+bool FileExist(string path); // РџСЂРѕРІРµСЂРєР° СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ С„Р°Р№Р»Р°
+void FileWriteData(int n, double *matrix);  // Р—Р°РїРёСЃСЊ РёСЃС…РѕРґРЅС‹С… РґР°РЅРЅС‹С… РІ С„Р°Р№Р»
+int FileReadMatrixSize(string path); // Р§С‚РµРЅРёРµ РґР»РёРЅС‹ СЃС‚СЂРѕРєРё РјР°С‚СЂРёС†С‹ РёР· С„Р°Р№Р»Р°
+double* FileReadMatrix(int n, double *matrix, string path); // Р§С‚РµРЅРёРµ Р·РЅР°С‡РµРЅРёР№ СЌР»РµРјРµРЅС‚РѕРІ РјР°С‚СЂРёС†С‹ РёР· С„Р°Р№Р»Р°
+bool ReadOnlyChecking(string path); //Р¤СѓРЅРєС†РёСЏ, РїСЂРѕРІРµСЂСЏСЋС‰Р°СЏ, СЏРІР»СЏРµС‚СЃСЏ Р»Рё С„Р°Р№Р» РґРѕСЃС‚СѓРїРЅС‹Рј С‚РѕР»СЊРєРѕ РґР»СЏ С‡С‚РµРЅРёСЏ. РџСЂРёРЅРёРјР°РµС‚ РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ.
+bool FileCorrectChecking(string path); //Р¤СѓРЅРєС†РёСЏ, РїСЂРѕРІРµСЂСЏСЋС‰Р°СЏ РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ С„Р°Р№Р»Р°
+bool FileReadCorrectChecking(string path); //Р¤СѓРЅРєС†РёСЏ, РїСЂРѕРІРµСЂСЏСЋС‰Р°СЏ РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ С„Р°Р№Р»Р°, РёР· РєРѕС‚РѕСЂРѕРіРѕ СЃС‡РёС‚С‹РІР°СЋС‚ РґР°РЅРЅС‹Рµ
+bool FileOpenChecking(string path); // Р¤СѓРЅРєС†РёСЏ, РїСЂРѕРІРµСЂСЏСЋС‰Р°СЏ РѕС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°

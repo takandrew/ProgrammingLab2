@@ -4,74 +4,74 @@
 
 using namespace std;
 
-// Приветствие
+// РџСЂРёРІРµС‚СЃС‚РІРёРµ
 void Greeting() {
-	cout << "Данная программа позволяет производить перестановку столбцов матрицы." << endl;
+	cout << "Р”Р°РЅРЅР°СЏ РїСЂРѕРіСЂР°РјРјР° РїРѕР·РІРѕР»СЏРµС‚ РїСЂРѕРёР·РІРѕРґРёС‚СЊ РїРµСЂРµСЃС‚Р°РЅРѕРІРєСѓ СЃС‚РѕР»Р±С†РѕРІ РјР°С‚СЂРёС†С‹." << endl;
 	cout << endl;
-	cout << "Автор: Кувылькин Андрей" << endl;
-	cout << "Группа: 494" << endl;
-	cout << "Лабораторная работа №2" << endl;
-	cout << "Вариант 10" << endl;
+	cout << "РђРІС‚РѕСЂ: РљСѓРІС‹Р»СЊРєРёРЅ РђРЅРґСЂРµР№" << endl;
+	cout << "Р“СЂСѓРїРїР°: 494" << endl;
+	cout << "Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° в„–2" << endl;
+	cout << "Р’Р°СЂРёР°РЅС‚ 10" << endl;
 	cout << endl;
 }
 
-// Основное меню
+// РћСЃРЅРѕРІРЅРѕРµ РјРµРЅСЋ
 bool Menu() {
 	enum MenuCase { again = 1, info, testing, finish };
 	int variant;
 	cout << endl;
 	cout << "MENU" << endl;
-	cout << "Выберите вариант:" << endl;
-	cout << "1. Начать программу заново." << endl;
-	cout << "2. Вывести информацию о программе и авторе." << endl;
-	cout << "3. Провести тестирование." << endl;
-	cout << "4. Выйти из программы." << endl;
+	cout << "Р’С‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚:" << endl;
+	cout << "1. РќР°С‡Р°С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ Р·Р°РЅРѕРІРѕ." << endl;
+	cout << "2. Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїСЂРѕРіСЂР°РјРјРµ Рё Р°РІС‚РѕСЂРµ." << endl;
+	cout << "3. РџСЂРѕРІРµСЃС‚Рё С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ." << endl;
+	cout << "4. Р’С‹Р№С‚Рё РёР· РїСЂРѕРіСЂР°РјРјС‹." << endl;
 	cout << endl;
 	variant = NumInInt();
 	switch (variant) {
 	case again: return true;
 	case info: {cout << endl; Greeting(); return Menu(); }
 	case testing: {TestWorking(); return Menu(); }
-	case finish: {cout << "Программа завершена." << endl; return false; }
-	default: {cout << "Введено неправильное значение." << endl; return Menu(); }
+	case finish: {cout << "РџСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂС€РµРЅР°." << endl; return false; }
+	default: {cout << "Р’РІРµРґРµРЅРѕ РЅРµРїСЂР°РІРёР»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ." << endl; return Menu(); }
 	}
 }
 
-// Меню сохранения результата в файл
+// РњРµРЅСЋ СЃРѕС…СЂР°РЅРµРЅРёСЏ СЂРµР·СѓР»СЊС‚Р°С‚Р° РІ С„Р°Р№Р»
 bool MenuResult() {
 	enum MenuResuiltCase { Yes = 1, No };
 	int variant;
 	cout << endl;
-	cout << "Сохранить результат в файл?" << endl;
-	cout << "1. Да." << endl;
-	cout << "2. Нет." << endl;
+	cout << "РЎРѕС…СЂР°РЅРёС‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚ РІ С„Р°Р№Р»?" << endl;
+	cout << "1. Р”Р°." << endl;
+	cout << "2. РќРµС‚." << endl;
 	cout << endl;
 	variant = NumInInt();
 	switch (variant) {
 	case Yes: return true;
 	case No: return false;
-	default: {cout << "Введено неправильное значение." << endl; return MenuResult(); }
+	default: {cout << "Р’РІРµРґРµРЅРѕ РЅРµРїСЂР°РІРёР»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ." << endl; return MenuResult(); }
 	}
 }
 
-// Меню сохранения исходных данных в файл
+// РњРµРЅСЋ СЃРѕС…СЂР°РЅРµРЅРёСЏ РёСЃС…РѕРґРЅС‹С… РґР°РЅРЅС‹С… РІ С„Р°Р№Р»
 bool MenuExportData() {
 	enum MenuExportDataCase { Yes = 1, No };
 	int variant;
 	cout << endl;
-	cout << "Сохранить исходные данные в файл?" << endl;
-	cout << "1. Да." << endl;
-	cout << "2. Нет." << endl;
+	cout << "РЎРѕС…СЂР°РЅРёС‚СЊ РёСЃС…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ РІ С„Р°Р№Р»?" << endl;
+	cout << "1. Р”Р°." << endl;
+	cout << "2. РќРµС‚." << endl;
 	cout << endl;
 	variant = NumInInt();
 	switch (variant) {
 	case Yes: return true;
 	case No: return false;
-	default: {cout << "Введено неправильное значение." << endl; return MenuExportData(); }
+	default: {cout << "Р’РІРµРґРµРЅРѕ РЅРµРїСЂР°РІРёР»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ." << endl; return MenuExportData(); }
 	}
 }
 
-// Меню выбора происхождения исходных данных
+// РњРµРЅСЋ РІС‹Р±РѕСЂР° РїСЂРѕРёСЃС…РѕР¶РґРµРЅРёСЏ РёСЃС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…
 int MenuImportData() {
 	enum MenuImportDataCase { Yes = 1, No, Random };
 	int variant;
@@ -79,33 +79,33 @@ int MenuImportData() {
 	int two = 2;
 	int three = 3;
 	cout << endl;
-	cout << "Загрузить исходные данные из файла?" << endl;
-	cout << "1. Загрузить исходные данные из файла." << endl;
-	cout << "2. Ввести исходные данные самостоятельно." << endl;
-	cout << "3. Заполнить матрицу случайными числами." << endl;
+	cout << "Р—Р°РіСЂСѓР·РёС‚СЊ РёСЃС…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ РёР· С„Р°Р№Р»Р°?" << endl;
+	cout << "1. Р—Р°РіСЂСѓР·РёС‚СЊ РёСЃС…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ РёР· С„Р°Р№Р»Р°." << endl;
+	cout << "2. Р’РІРµСЃС‚Рё РёСЃС…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ." << endl;
+	cout << "3. Р—Р°РїРѕР»РЅРёС‚СЊ РјР°С‚СЂРёС†Сѓ СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё." << endl;
 	cout << endl;
 	variant = NumInInt();
 	switch (variant) {
 	case Yes: return one;
 	case No: return two;
 	case Random: return three;
-	default: {cout << "Введено неправильное значение." << endl; return MenuImportData(); }
+	default: {cout << "Р’РІРµРґРµРЅРѕ РЅРµРїСЂР°РІРёР»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ." << endl; return MenuImportData(); }
 	}
 }
 
-// Меню выбора перезаписи существующего файла
+// РњРµРЅСЋ РІС‹Р±РѕСЂР° РїРµСЂРµР·Р°РїРёСЃРё СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ С„Р°Р№Р»Р°
 bool MenuReWrite() {
 	enum MenuReWriteCase { ReWrite = 1, SeekClear };
 	int variant;
 	cout << endl;
-	cout << "Файл уже хранит в себе данные. Выберите необходимое действие:" << endl;
-	cout << "1. Перезаписать данные в файле" << endl;
-	cout << "2. Указать путь к другому файлу" << endl;
+	cout << "Р¤Р°Р№Р» СѓР¶Рµ С…СЂР°РЅРёС‚ РІ СЃРµР±Рµ РґР°РЅРЅС‹Рµ. Р’С‹Р±РµСЂРёС‚Рµ РЅРµРѕР±С…РѕРґРёРјРѕРµ РґРµР№СЃС‚РІРёРµ:" << endl;
+	cout << "1. РџРµСЂРµР·Р°РїРёСЃР°С‚СЊ РґР°РЅРЅС‹Рµ РІ С„Р°Р№Р»Рµ" << endl;
+	cout << "2. РЈРєР°Р·Р°С‚СЊ РїСѓС‚СЊ Рє РґСЂСѓРіРѕРјСѓ С„Р°Р№Р»Сѓ" << endl;
 	cout << endl;
 	variant = NumInInt();
 	switch (variant) {
 	case ReWrite: return true;
 	case SeekClear: return false;
-	default: {cout << "Введено неправильное значение." << endl; return MenuReWrite(); }
+	default: {cout << "Р’РІРµРґРµРЅРѕ РЅРµРїСЂР°РІРёР»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ." << endl; return MenuReWrite(); }
 	}
 }

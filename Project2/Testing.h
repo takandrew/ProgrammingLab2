@@ -1,4 +1,4 @@
 #pragma once
-bool Testing(int n, int k, int l); // Тестирование основного алгоритма
-void TestWorking(); // Тестирование модулей
-void TestNotWorking(int n, int k, int l); // Вывод значений в случае провала теста
+bool Testing(int n, int k, int l); // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РѕСЃРЅРѕРІРЅРѕРіРѕ Р°Р»РіРѕСЂРёС‚РјР°
+void TestWorking(); // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РјРѕРґСѓР»РµР№
+void TestNotWorking(int n, int k, int l); // Р’С‹РІРѕРґ Р·РЅР°С‡РµРЅРёР№ РІ СЃР»СѓС‡Р°Рµ РїСЂРѕРІР°Р»Р° С‚РµСЃС‚Р°
